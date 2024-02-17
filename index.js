@@ -15,7 +15,7 @@ readDir(input).then(function (data) {
     let totalIntrest = 0
     let promises = []
     var fileStreams = data.map((file) => {
-        return fs.createReadStream("assets/" + file, 'utf-8')
+        return fs.createReadStream(input + "/" + file, 'utf-8')
     })
     fileStreams.forEach((stream, index) => {
         promises.push(new Promise((resolve, reject) => {
